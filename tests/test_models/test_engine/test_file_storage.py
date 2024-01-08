@@ -126,5 +126,5 @@ class TestFileStorage(unittest.TestCase):
     def test_count(self):
         """Test that count properly counts all objects"""
         storage = FileStorage()
-        nobjs = len(storage._FileStorage__objects)
-        self.assertEqual(nobjs, storage.count())
+        number = len(storage._FileStorage__objects)
+        self.assertEqual(number, storage.count())
