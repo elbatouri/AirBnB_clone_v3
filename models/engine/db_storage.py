@@ -79,7 +79,8 @@ class DBStorage:
         """
         Return The number of objects in database match class name
         """
-        objects = self.__session.query(classes[cls])
+        class_name = cls.__name__
+        objects = self.__session.query(classes[class_name])
         for obj in objects:
             if obj.id == id:
                 return obj
@@ -91,7 +92,7 @@ class DBStorage:
         that matches a given class name
         """
         objectCount = 0
-        for cls in classes:
+        for clss in classes:
             if cls is None or cls is classes[clss] or cls is clss:
-                objectCount += len(self.__session.query(classes[clss].all()
+                objectCount += len(self.__session.query(classes[clss]).all())
         return objectCount
