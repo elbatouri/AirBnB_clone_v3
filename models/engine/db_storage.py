@@ -77,7 +77,7 @@ class DBStorage:
 
     def get(self, cls, id):
         """
-        Return the number of objects in database match class name
+        Return The number of objects in database match class name
         """
         objects = self.__session.query(classes[cls])
         for obj in objects:
@@ -87,7 +87,8 @@ class DBStorage:
 
     def count(self, cls=None):
         """
-        Return the number of objects in database match class name
+        Return the number of objects in database
+        that matches a given class name
         """
         objectCount = 0
         for cls in classes:
