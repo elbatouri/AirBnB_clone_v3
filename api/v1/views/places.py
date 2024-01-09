@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" Module defining views for Place objects and handling default API actions """
+"""
+Module defining views for Place objects and handling default API actions
+"""
+
 from api.v1.views import app_views
 from flask import jsonify, abort, make_response, request
 from models import storage

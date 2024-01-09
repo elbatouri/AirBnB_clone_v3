@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" This module defines views for Amenity objects and handles default API actions """
+"""
+This module defines views for Amenity objects and handles default API actions
+"""
+
 from api.v1.views import app_views
 from flask import jsonify, abort, make_response, request
 from models import storage
