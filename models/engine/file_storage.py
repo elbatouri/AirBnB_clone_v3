@@ -75,19 +75,16 @@ class FileStorage:
         """
         Return the object that matches class name and ID, or None if not found.
         """
-        key = f"{cls}.{id}"
-        if key in self.__objects.keys():
-            return self.__objects[key]
+        all_classes = self.all(cls)
+        
+        for obj in all.classes.values():
+            if id ==str(obj.id):
+                return obj
         return None
 
     def count(self, cls=None):
         """
         Count the number of objects in the database that match a class name.
         """
-        if cls:
-            number = 0
-            for obj in self.__objects.values():
-                if obj.__class__.__name__ == cls:
-                    number += 1
-            return number
-        return len(self.__objects)
+        number = len(self.all(cls))
+        return number
